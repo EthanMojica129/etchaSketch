@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+    <link href="./reset.css" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="flex-container">
+        <div class="title"><h1>Etch-a-sketch</h1></div>
+        <div class="mode">Mode: Coloring</div>
+        <div class="content">
+            <div class="board"></div>
+                <div class="buttons">
+                    <button onclick="changeColor('black')" class="blackButton">Black</button>
+                    <button onclick="changeColor('white')" class="whiteButton">Eraser</button>
+                    <button onclick="changeColor('gray')" class="greyButton">Gray</button>
+                    <div class="colorPicker">
+                        <input type="color" id="colorPicker" name="colorPicker" onchange="changeColor(this.value)" />
+
+                        <button class="colorPickerButton">Pick Color</button>
+                    </div>
+                    <button onclick="changeColor('random')" class="rainbowButton">Rainbow</button>
+                    <button onclick="resetBoard()" class="resetButton">Reset</button>
+            </div>
+            <div class="color-container">
+                <input type="text" placeholder="Size of Board" Value="16" onchange="changeSize(this.value)" />
+                <button>Set Size</button>
+            </div>
+            <div class="error">
+                Number must be between 0 and 100
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
